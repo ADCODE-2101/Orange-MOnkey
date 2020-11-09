@@ -3,7 +3,15 @@
 using namespace std;
 
 int findMaxProfit(int numOfPredictedDays, vector<int> predictedSharePrices) {
-    return 9;
+    int n = numOfPredictedDays,i,j,s=0,dif;
+    for(i=0;i<n;i++)
+    { for(j=i+1;j<n;j++)
+    { dif= predictedSharePrices[j]-predictedSharePrices[i]; 
+    if(dif>s)
+    s=dif;
+    }
+    }
+    return s;
 }
 
 vector<int> splitStringToInt(const string& str, char delim) {
